@@ -5,13 +5,11 @@ export default angular.module('games.services.games', [])
         getGames: function (categ) {
             var deferred = $q.defer();
             if(categ == undefined){
-                console.log('category is undefined');
                 var params = {
                     expectedFields: 2 + 4 + 8192 + 33554432 + 262144 + 524288 + 65536,
                 };
             }
             else{
-                console.log('category is: ', categ);
                 var params = {
                     expectedFields: 2 + 4 + 8192 + 33554432 + 262144 + 524288 + 65536,
                     filterByCategory: [categ]

@@ -6,17 +6,14 @@ export default angular.module('games.controller.games', ['games.directive.displa
         $scope.gameCateg = [];
         requestGames.getGames().then(function(data){
             $scope.gamesList = data.games;
-            console.log('gamesList: ', $scope.gamesList);
             $scope.$apply();
         });
         requestVendors.getVendors().then(function(data){
             $scope.vendorList = data.vendors;
-            console.log('vendorList: ', $scope.vendorList);
             $scope.$apply();
         });
         requestCateg.getCateg().then(function(data){
             $scope.gameCateg = data.categories;
-            console.log('gameCateg', $scope.gameCateg);
             $scope.$apply();
         })
 
@@ -24,24 +21,10 @@ export default angular.module('games.controller.games', ['games.directive.displa
             $scope.gamesList = [];
             requestGames.getGames(param).then(function(data){
                 $scope.gamesList = data.games;
-                console.log('gamesList: ', $scope.gamesList);
                 $scope.$apply();
             });
         }
         $scope.openGame = function(param) {
             $window.location.href = param
         };
-
-        //$scope.addPage = function(){
-        //    $scope.gamesList.currentPageIndex += 1;
-        //    requestGames.getGames($scope.gamesList.currentPageIndex).then(function(data){
-        //        for (var i = 0; i < data.games.length; i++){
-        //            $scope.gamesList.games.push(data.games[i]);
-        //            $scope.$apply();
-        //        }
-        //        console.log('Button was clicked')
-        //    })
-        //    console.log('New gamesList is: ', $scope.gamesList);
-        //};
-
-    }]);
+            }]);

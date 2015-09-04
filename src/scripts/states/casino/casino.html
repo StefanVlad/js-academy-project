@@ -16,15 +16,13 @@
         </a>
     </li>
     <li class="MenuItem item" id="gameCategory" ui-sref-active="ActiveMenuItem" itemprop="itemListElement" ng-repeat="categ in gameCateg" ng-click="testfunc(categ)">
-        <a class="MenuLink url" ui-sref="#casino.category({category: '{{categ}}'})"
+        <a class="MenuLink url" ui-sref="category({category:categ})"
            title="View {{categ}} games" itemprop="url">
             <span class="icon i-eye photo" aria-hidden="true"></span>
             <span class="ButtonText fn" itemprop="name">{{categ}}</span>
         </a>
     </li>
 </ul>
-
-
 
 <div class="CasinoGames">
     <form class="Form CasinoControls Container" id="casinoControls" name="casinoControls"
@@ -61,7 +59,7 @@
     </form>
     <div class="CasinoGamesArea">
         <div class="CasinoCategory Container CasinoCategory-1" ng-init="limit=20">
-            <img class="ng-hide" src="/src/img/loading2.gif" style="width:400px;height:400px;margin:auto" ng-hide="gamesList.length > 0">
+            <img class="ng-hide" src="/img/loading2.gif" style="width:400px;height:400px;margin:auto" ng-hide="gamesList.length > 0">
             <ol class="CasinoGamesList">
                 <display-games ng-repeat="game in gamesList | orderBy:sortBy | filter:sortVendor | filter:searchGame  | limitTo: limit"></display-games>
             </ol>
@@ -74,5 +72,4 @@
         </div>
     </div>
 </div>
-
 <div style="clear: both"></div>
