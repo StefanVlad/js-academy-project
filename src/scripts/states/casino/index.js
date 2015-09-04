@@ -8,13 +8,12 @@ export default angular.module('state.casino', [])
                 },
                 content: {
                     templateUrl: require('./casino.html'),
-                    controller: function(){
-                        console.log('casino loaded')
-                    }
+                    controller: 'MainController'
+
                 },
                 footer: {
                     templateUrl: require('../partials/footer.html')
                 }
             }
         })
-    }])
+   }])

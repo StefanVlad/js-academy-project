@@ -2,8 +2,8 @@
 <head>
 
     <base href="/"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
     <link href="/styles/style.css" rel="stylesheet" type="text/css"/>
     <meta charset="utf-8">
     <title>Home</title>
@@ -25,7 +25,7 @@
                 </li>
                 <li class="MenuItem">
                     <a class="MenuLink" ui-sref="casino" title="See the entire list of our Casino games">
-                        <span class="ButtonText">Casino</span>
+                        <span class="ButtonText" ng-click="testfunc()">Casino</span>
                     </a>
                 </li>
                 <li class="MenuItem">
@@ -86,6 +86,9 @@
     <menu ui-view="footer"  class="Footer">
     </menu>
 </div>
+
+<!--Modules-->
 <script src="/scripts/app.js"></script>
+
 </body>
 </html>
